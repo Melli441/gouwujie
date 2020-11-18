@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Tabbar></Tabbar>
     <router-view></router-view>
+    <Tabbar></Tabbar>
   </div>
 </template>
 <script>
