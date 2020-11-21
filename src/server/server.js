@@ -39,7 +39,58 @@ app.get('/home/homedata',function(req,res){
       res.send(JSON.parse(data))
     })
   })
+app.get('/categorydata/subcategory582',function(req,res){
+  fs.readFile('./data/categorydata/subcategory582.json',function(err,data){
+    if(err){
+      return res.send('err')
+    }
+    res.send(JSON.parse(data))
+  })
+})
+app.get('/categorydata/subcategory595',function(req,res){
+  fs.readFile('./data/categorydata/subcategory595.json',function(err,data){
+    if(err){
+      return res.send('err')
+    }
+    res.send(JSON.parse(data))
+  })
+})
+app.get('/categorydata/subcategory596',function(req,res){
+  fs.readFile('./data/categorydata/subcategory596.json',function(err,data){
+    if(err){
+      return res.send('err')
+    }
+    res.send(JSON.parse(data))
+  })
+})
+app.get('/categorydata/subcategory598',function(req,res){
+  fs.readFile('./data/categorydata/subcategory598.json',function(err,data){
+    if(err){
+      return res.send('err')
+    }
+    res.send(JSON.parse(data))
+  })
+})
 
+app.get('/home/tabdata', function (req, res) {
+  fs.readFile('./data/homedata/tabdata.json', function (err, data) {
+    if (err) {
+      return res.send('err')
+    }
+    res.send(JSON.parse(data))
+  })
+})
+app.get('/home/homedata', function (req, res) {
+  //判断参数
+  const path=`./data/homedata/${req.query.type}${req.query.page}.json`
+  // console.log(path)
+  fs.readFile(path, function (err, data) {
+    if (err) {
+      return res.send('err')
+    }
+    res.send((JSON).parse(data))
+  })
+})
 app.listen(8000,function(){
   console.log('server is running...')
 })
